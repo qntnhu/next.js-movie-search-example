@@ -4,7 +4,7 @@ import 'isomorphic-fetch';
 import { Link, Router } from '../routes'
 
 export default class MyPage extends React.Component {
-  static async getInitialProps () {
+  static async getInitialProps() {
     // eslint-disable-next-line no-undef
     // const res = await fetch('https://api.github.com/repos/zeit/next.js')
     // const json = await res.json();
@@ -13,7 +13,7 @@ export default class MyPage extends React.Component {
     return {};
   }
 
-  render () {
+  render() {
     return (
       <ul>
         <li>
