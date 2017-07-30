@@ -5,8 +5,8 @@ const posts = [
   { slug: 'another-blog-post', title: 'Another blog post' }
 ];
 
-export default class extends React.Component {
-  static async getInitialProps({ query, res }) {
+export default class Blog extends React.Component {
+  static getInitialProps({ query, res }) {
     const post = posts.find(post => post.slug === query.slug);
 
     if (!post && res) {

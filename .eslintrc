@@ -4,7 +4,7 @@
     "ecmaFeatures": {
       "jsx": true,
       "modules": true
-    },
+    }
   },
   "env": {
     "browser": true,
@@ -16,6 +16,10 @@
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,
+    "react/jsx-filename-extension": 0,
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "jsx-a11y/href-no-hash": 0,
     "wrap-iife": [2, "inside"],
     "func-names": 0,
     "space-before-function-paren": [2, "never"],
