@@ -11,12 +11,15 @@ app.prepare()
   .then(() => {
     const server = express();
 
-    server.get('/api', async(req, res) => {
+    server.get('/api/search', async(req, res) => {
       const { key } = req.query;
       let IMDbdata;
+      let info = '';
 
       if (key) {
         IMDbdata = await getIMDbData(key);
+      } else {
+        info = 'Key is empty';
       }
 
       if (IMDbdata) {
@@ -27,7 +30,8 @@ app.prepare()
       } else {
         res.json({
           status: 'success',
-          data: null
+          data: null,
+          info: info || undefined
         });
       }
     });
