@@ -2,21 +2,32 @@ import React from 'react';
 import NextLink from 'next/link';
 import 'isomorphic-fetch';
 import { Link } from '../routes';
+import Result from '../components/Result';
+import getIMDbData from '../lib/getIMDbData';
 
 export default class MyPage extends React.Component {
   static async getInitialProps() {
     return {};
   }
+  state = {
+    key: '',
+    result: null
+  }
 
   handleKeyUpSearchInput = (e) => {
     const val = e.currentTarget.value;
 
-    console.log(val);
+    this.setState({
+      key: val
+    });
   }
-  handlerSearchSubmit = (e) => {
-    console.log('test1');
-
+  handlerSearchSubmit = async(e) => {
     e.preventDefault();
+    const IMDbData = await getIMDbData(this.state.key, true);
+
+    this.setState({
+      result: IMDbData
+    });
   }
 
   render() {
@@ -39,10 +50,11 @@ export default class MyPage extends React.Component {
             </Link>
           </li>
         </ul>
-        <form method="POST">
+        <form method="GET">
           <input type="text" placeholder="search" onKeyUp={this.handleKeyUpSearchInput} />
           <button type="submit" onClick={this.handlerSearchSubmit}>search</button>
         </form>
+        <Result result={this.state.result} />
       </div>
     );
   }
