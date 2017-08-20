@@ -29,7 +29,10 @@ export default class Search extends Component {
 
     if (IMDbData) {
       return (
-        <div>{IMDbData}</div>
+        <div>
+          <h1>server-side</h1>
+          <div>{IMDbData}</div>
+        </div>
       );
     } else {
       return (

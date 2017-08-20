@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
+import ResultItem from './ResultItem';
 
 class Result extends Component {
   render() {
-    const result = this.props.result;
+    const result = JSON.parse(this.props.result);
+    if (!result) {
+      return null;
+    }
+    const items = result.d;
 
-    console.log('result: ', JSON.parse(result));
+    console.log('result: ', result);
+    console.log('items: ', items);
+
+    if (typeof items === 'undefined') {
+      return (
+        <div>
+          No result
+        </div>
+      );
+    }
 
     return (
       <div>
-        {result}
+        {items.map((item, ind) => {
+          return <ResultItem ind={ind + 1} key={item.id} itemProp={item} />;
+        })}
       </div>
     );
   }
