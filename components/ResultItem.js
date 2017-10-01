@@ -4,7 +4,9 @@ class ResultItem extends Component {
   render() {
     const { itemProp, ind } = this.props;
 
-    console.log('itemP', itemProp);
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('itemP', itemProp);
+    }
 
     return (
       <div>

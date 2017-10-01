@@ -51,7 +51,7 @@ export default class MyPage extends React.Component {
           </li>
         </ul>
         <form method="GET">
-          <input type="text" placeholder="search" onKeyUp={this.handleKeyUpSearchInput} />
+          <input type="text" placeholder="search" onKeyUp={this.handleKeyUpSearchInput} value="1" />
           <button type="submit" onClick={this.handlerSearchSubmit}>search</button>
         </form>
         <Result result={this.state.result} />

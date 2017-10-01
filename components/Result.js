@@ -9,8 +9,10 @@ class Result extends Component {
     }
     const items = result.d;
 
-    console.log('result: ', result);
-    console.log('items: ', items);
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('result: ', result);
+      console.log('items: ', items);
+    }
 
     if (typeof items === 'undefined') {
       return (
