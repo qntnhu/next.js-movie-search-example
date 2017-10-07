@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getIMDbData from '../lib/getIMDbData';
+import { getIMDbData } from '../lib/getIMDbData';
 
 export default class Search extends Component {
   static async getInitialProps({ req, res, query }) {

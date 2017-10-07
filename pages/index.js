@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import 'isomorphic-fetch';
 import { Link } from '../routes';
 import Result from '../components/Result';
-import getIMDbData from '../lib/getIMDbData';
+import { getIMDbData } from '../lib/getIMDbData';
 
 export default class MyPage extends React.Component {
   static async getInitialProps() {
